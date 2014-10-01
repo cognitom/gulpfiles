@@ -1,0 +1,28 @@
+{
+  "name": "gulpfile",
+  "description": "gulpfile for gulp.js",
+  "author": "Tsutomu Kawamura <cognitom@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "gulpvar": {
+    "src": "./src",
+    "dist": "./dist",
+    "bowerDist": "./dist/js",
+    "bowerMap": {
+      "parse": "parse/index.js",
+      "angular": "angular/angular.min.js"
+    },
+    "coffeeDist": "./dist/coffee",
+    "coffeeSrc": "./src/coffee",
+    "cssDist": "./dist/css",
+    "cssSrc": "./src/css",
+    "htmlDist": "./dist",
+    "htmlSrc": "./src",
+    "iconClass": "mi",
+    "iconDist": "./dist/font",
+    "iconSrc": "./src/icon",
+    "iconTemplate": "fontawesome-style",
+    "parseDist": "./cloud",
+    "parseSrc": "./src/parse"
+  }
+}
