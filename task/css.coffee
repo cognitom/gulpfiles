@@ -4,7 +4,7 @@ autoprefixer = require 'gulp-autoprefixer'
 minifyCss    = require 'gulp-minify-css'
 csslint      = require 'gulp-csslint'
 notify       = require 'gulp-notify'
-meta         = require './package.json'
+meta         = require '../package.json'
 
 $ = meta.gulpvar
 

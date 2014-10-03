@@ -3,7 +3,7 @@ browserify = require 'browserify'
 source     = require 'vinyl-source-stream'
 streamify  = require 'gulp-streamify'
 uglify     = require 'gulp-uglify'
-meta       = require './package.json'
+meta       = require '../package.json'
 
 $ = meta.gulpvar
 
