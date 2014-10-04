@@ -3,9 +3,9 @@ rename      = require 'gulp-rename'
 bower       = require 'bower'
 runSequence = require 'run-sequence'
 merge       = require 'merge-stream'
-meta        = require './package.json'
+meta        = require '../package.json'
 
-$ = meta.gulpvar
+$ = meta.gulpvars
 
 gulp.task 'bower', (cb) -> runSequence 'bower-update', 'bower-copy', cb
 

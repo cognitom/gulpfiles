@@ -1,9 +1,9 @@
 gulp    = require 'gulp'
 coffee  = require 'gulp-coffee'
 changed = require 'gulp-changed'
-meta    = require './package.json'
+meta    = require '../package.json'
 
-$ = meta.gulpvar
+$ = meta.gulpvars
     
 gulp.task 'parse', ->
   gulp.src ["#{$.parseSrc}/**/*.coffee"]

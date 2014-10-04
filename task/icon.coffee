@@ -3,9 +3,9 @@ rename      = require 'gulp-rename'
 sketch      = require 'gulp-sketch'
 iconfont    = require 'gulp-iconfont'
 consolidate = require 'gulp-consolidate'
-meta        = require './package.json'
+meta        = require '../package.json'
 
-$ = meta.gulpvar
+$ = meta.gulpvars
 
 gulp.task 'icon', ->
   gulp.src "#{$.iconSrc}/#{$.iconName}.sketch}"

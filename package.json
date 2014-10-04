@@ -4,7 +4,7 @@
   "author": "Tsutomu Kawamura <cognitom@gmail.com>",
   "license": "MIT",
   "private": true,
-  "gulpvar": {
+  "gulpvars": {
     "src": "./src",
     "dist": "./dist",
     "bowerDist": "./dist/js",

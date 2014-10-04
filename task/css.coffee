@@ -6,7 +6,7 @@ csslint      = require 'gulp-csslint'
 notify       = require 'gulp-notify'
 meta         = require '../package.json'
 
-$ = meta.gulpvar
+$ = meta.gulpvars
 
 gulp.task 'css', ->
   gulp.src ["#{$.cssSrc}/style.css"]

@@ -5,7 +5,7 @@ streamify  = require 'gulp-streamify'
 uglify     = require 'gulp-uglify'
 meta       = require '../package.json'
 
-$ = meta.gulpvar
+$ = meta.gulpvars
 
 gulp.task 'coffee', ->
   browserify

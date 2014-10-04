@@ -1,9 +1,9 @@
 gulp    = require 'gulp'
 changed = require 'gulp-changed'
 replace = require 'gulp-replace'
-meta    = require './package.json'
+meta    = require '../package.json'
 
-$ = meta.gulpvar
+$ = meta.gulpvars
 
 gulp.task 'html', ->
   gulp.src ["#{$.htmlSrc}/*.html"]
