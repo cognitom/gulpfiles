@@ -1,6 +1,6 @@
 {
-  "name": "gulpfile",
-  "description": "gulpfile for gulp.js",
+  "name": "gulpfiles",
+  "description": "gulpfiles for gulp.js",
   "author": "Tsutomu Kawamura <cognitom@gmail.com>",
   "license": "MIT",
   "private": true,
