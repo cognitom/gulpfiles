@@ -5,7 +5,12 @@ dir         = requireDir './task'
 del         = require 'del'
 browserSync = require 'browser-sync'
 reload      = browserSync.reload
-meta        = require './package.json'
+straw       = require 'gulp-straw'
+
+$ =
+  src:  './src/'
+  dist: './dist/'
+straw.override $ # with package.json
 
 $ = meta.gulpvar
 
@@ -16,8 +21,8 @@ gulp.task 'clean', (cb) -> del [$.dist], -> cb()
 gulp.task 'watch', ->
   browserSync.init
     notify: false
-    server: baseDir: "#{$.dist}/"
+    server: baseDir: $.dist
   o = debounceDelay: 3000
-  gulp.watch ["#{$.coffeeDist}/**/*.coffee"], o, ['coffee']
-  gulp.watch ["#{$.cssDist}/**/*.css"], o, ['css']
-  gulp.watch ["#{$.dist}/**/*.css", "#{$.dist}/**/*.html"], o, reload
+  gulp.watch ["#{$.dist}js/**/*.coffee"], o, ['coffee']
+  gulp.watch ["#{$.dist}css/**/*.css"], o, ['css']
+  gulp.watch ["#{$.dist}**/*.css", "#{$.dist}**/*.html"], o, reload

@@ -1,17 +1,15 @@
-gulp       = require 'gulp'
-browserify = require 'browserify'
-source     = require 'vinyl-source-stream'
-streamify  = require 'gulp-streamify'
-uglify     = require 'gulp-uglify'
-meta       = require '../package.json'
+gulp     = require 'gulp'
+coffee   = require 'gulp-coffee'
+uglify   = require 'gulp-uglify'
+straw    = require 'gulp-straw'
 
-$ = meta.gulpvars
+$ =
+  src:  './src/coffee/**/*.coffee'
+  dist: './dist/coffee/'
+straw.override $ # with package.json
 
 gulp.task 'coffee', ->
-  browserify
-    entries: ["#{$.coffeeSrc}/index.coffee"]
-    extensions: ['.coffee']
-  .bundle()
-  .pipe source 'index.js'
+  gulp.src $.src
+  .pipe coffee()
   .pipe streamify uglify mangle: false# without mangling for AngularJS
-  .pipe gulp.dest "#{$.coffeeDist}/"
+  .pipe gulp.dest $.dist

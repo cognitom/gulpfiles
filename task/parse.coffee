@@ -1,12 +1,15 @@
 gulp    = require 'gulp'
 coffee  = require 'gulp-coffee'
 changed = require 'gulp-changed'
-meta    = require '../package.json'
+straw   = require 'gulp-straw'
 
-$ = meta.gulpvars
-    
+$ =
+  src:  './src/parse/**/*.coffee'
+  dist: './cloud/'
+straw.override $ # with package.json
+
 gulp.task 'parse', ->
-  gulp.src ["#{$.parseSrc}/**/*.coffee"]
-  .pipe changed "#{$.parseDist}/"
+  gulp.src $.src
+  .pipe changed $.dist
   .pipe coffee bare: true
-  .pipe gulp.dest "#{$.parseDist}/"
+  .pipe gulp.dest $.dist

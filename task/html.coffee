@@ -1,12 +1,15 @@
 gulp    = require 'gulp'
 changed = require 'gulp-changed'
 replace = require 'gulp-replace'
-meta    = require '../package.json'
+straw   = require 'gulp-straw'
 
-$ = meta.gulpvars
+$ =
+  src:  './src/*.html'
+  dist: './dist/'
+straw.override $ # with package.json
 
 gulp.task 'html', ->
-  gulp.src ["#{$.htmlSrc}/*.html"]
-  .pipe changed "#{$.htmlDist}/"
-  .pipe replace ".#{$.htmlDist}/js/", 'js/'
-  .pipe gulp.dest "#{$.htmlDist}/"
+  gulp.src $.src
+  .pipe changed $.dist
+  .pipe replace ".#{$.dist}js/", 'js/'
+  .pipe gulp.dest $.dist

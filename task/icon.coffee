@@ -3,22 +3,28 @@ rename      = require 'gulp-rename'
 sketch      = require 'gulp-sketch'
 iconfont    = require 'gulp-iconfont'
 consolidate = require 'gulp-consolidate'
-meta        = require '../package.json'
+straw       = require 'gulp-straw'
 
-$ = meta.gulpvars
+$ =
+  src:       './src/icon/'
+  dist:      './dist/font/'
+  name:      'symbols'
+  className: 'mi'
+  template:  'fontawesome-style'
+straw.override $ # with package.json
 
 gulp.task 'icon', ->
-  gulp.src "#{$.iconSrc}/#{$.iconName}.sketch}"
+  gulp.src "#{$.src}#{$.name}.sketch}"
   .pipe sketch
     export: 'artboards'
     formats: 'svg'
-  .pipe iconfont fontName: $.iconName
+  .pipe iconfont fontName: $.name
   .on 'codepoints', (codepoints) ->
-    gulp.src "#{$.iconSrc}/#{$.iconTemplate}.*"
+    gulp.src "#{$.src}#{$.template}.*"
     .pipe consolidate 'lodash',
       glyphs: codepoints
-      fontName: $.iconName
-      className: $.iconClass
-    .pipe rename basename: $.iconName
-    .pipe gulp.dest "#{$.iconDist}/"
-  .pipe gulp.dest "#{$.iconDist}/"
+      fontName: $.name
+      className: $.className
+    .pipe rename basename: $.name
+    .pipe gulp.dest $.dist
+  .pipe gulp.dest $.dist
