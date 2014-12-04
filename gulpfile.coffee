@@ -5,14 +5,10 @@ dir         = requireDir './task'
 del         = require 'del'
 browserSync = require 'browser-sync'
 reload      = browserSync.reload
-straw       = require 'gulp-straw'
 
 $ =
   src:  './src/'
   dist: './dist/'
-straw.override $ # with package.json
-
-$ = meta.gulpvar
 
 gulp.task 'default', (cb) -> runSequence 'clean', ['coffee'], cb
 

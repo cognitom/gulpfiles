@@ -3,14 +3,12 @@ rename      = require 'gulp-rename'
 bower       = require 'bower'
 runSequence = require 'run-sequence'
 merge       = require 'merge-stream'
-straw       = require 'gulp-straw'
 
 $ =
   dist: './dist/js'
   map:
     jquery:  'jquery/dist/jquery.min.*'
     angular: 'angular/angular.min.*'
-straw.override $ # with package.json
 
 gulp.task 'bower', (cb) -> runSequence 'bower-update', 'bower-copy', cb
 

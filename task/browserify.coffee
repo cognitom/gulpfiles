@@ -5,12 +5,10 @@ debowerify = require 'debowerify'
 source     = require 'vinyl-source-stream'
 streamify  = require 'gulp-streamify'
 uglify     = require 'gulp-uglify'
-straw      = require 'gulp-straw'
 
 $ =
   src:  './src/coffee/index.coffee'
   dist: './dist/coffee/'
-straw.override $ # with package.json
 
 gulp.task 'coffee', ->
   browserify

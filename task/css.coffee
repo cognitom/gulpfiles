@@ -4,13 +4,11 @@ autoprefixer = require 'gulp-autoprefixer'
 minifyCss    = require 'gulp-minify-css'
 csslint      = require 'gulp-csslint'
 notify       = require 'gulp-notify'
-straw        = require 'gulp-straw'
 
 $ =
   src:    './src/css/style.css'
   dist:   './dist/css/'
   target: './src/css/**/*.css'
-straw.override $ # with package.json
 
 gulp.task 'css', ->
   gulp.src $.src

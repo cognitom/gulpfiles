@@ -3,7 +3,6 @@ rename      = require 'gulp-rename'
 sketch      = require 'gulp-sketch'
 iconfont    = require 'gulp-iconfont'
 consolidate = require 'gulp-consolidate'
-straw       = require 'gulp-straw'
 
 $ =
   src:       './src/icon/'
@@ -11,7 +10,6 @@ $ =
   name:      'symbols'
   className: 'mi'
   template:  'fontawesome-style'
-straw.override $ # with package.json
 
 gulp.task 'icon', ->
   gulp.src "#{$.src}#{$.name}.sketch}"
