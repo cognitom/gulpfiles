@@ -12,7 +12,7 @@ $ =
   template:  'fontawesome-style'
 
 gulp.task 'icon', ->
-  gulp.src "#{$.src}#{$.name}.sketch}"
+  gulp.src "#{$.src}#{$.name}.sketch"
   .pipe sketch
     export: 'artboards'
     formats: 'svg'

@@ -8,7 +8,7 @@ uglify     = require 'gulp-uglify'
 
 $ =
   src:  './src/coffee/index.coffee'
-  dist: './dist/coffee/'
+  dist: './dist/js/'
 
 gulp.task 'coffee', ->
   browserify

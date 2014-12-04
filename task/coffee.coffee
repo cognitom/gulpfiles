@@ -4,7 +4,7 @@ uglify   = require 'gulp-uglify'
 
 $ =
   src:  './src/coffee/**/*.coffee'
-  dist: './dist/coffee/'
+  dist: './dist/js/'
 
 gulp.task 'coffee', ->
   gulp.src $.src

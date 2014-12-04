@@ -6,8 +6,8 @@ This is the repo for tracking my gulpfiles. Use this repo with [gulp-straw](http
 | :-- | :-- |
 | [gulpfile](gulpfile.coffee) | `default` `clean` `watch` |
 | [task/bower](task/bower.coffee) | `bower` `bower-install` `bower-update` `bower-copy` |
-| [task/coffee](task/coffee.coffee) | `coffee` |
 | [task/browserify](task/browserify.coffee) | `browserify` |
+| [task/coffee](task/coffee.coffee) | `coffee` |
 | [task/css](task/css.coffee) | `css` `css-lint` |
 | [task/icon](task/icon.coffee) | `icon` |
 | [task/parse](task/parse.coffee) | `parse` |
