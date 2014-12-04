@@ -3,6 +3,7 @@ rename      = require 'gulp-rename'
 sketch      = require 'gulp-sketch'
 iconfont    = require 'gulp-iconfont'
 consolidate = require 'gulp-consolidate'
+_           = require 'lodash' # for dependency
 
 $ =
   src:       './src/icon/'

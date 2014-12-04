@@ -10,7 +10,7 @@ $ =
   src:  './src/coffee/index.coffee'
   dist: './dist/js/'
 
-gulp.task 'coffee', ->
+gulp.task 'browserify', ->
   browserify
     entries: [$.src]
     extensions: ['.coffee']
