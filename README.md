@@ -11,6 +11,7 @@ This is the repo for tracking my gulpfiles. Use this repo with [gulp-straw](http
 | [task/css](task/css.coffee) | `css` `css-lint` |
 | [task/icon](task/icon.coffee) | `icon` |
 | [task/parse](task/parse.coffee) | `parse` |
+| [task/meta](task/meta.coffee) | `meta` `meta-file` `meta-dotfile` |
 
 ## Getting Started
 
