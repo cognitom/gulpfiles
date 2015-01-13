@@ -9,6 +9,17 @@ $ =
   src:    './src/css/style.css'
   dist:   './dist/css/'
   target: './src/css/**/*.css'
+  cssrules:
+    'adjoining-classes': false
+    'box-model': false
+    'compatible-vendor-prefixes': false
+    'empty-rules': false
+    'fallback-colors': false
+    'ids': false
+    'import': false
+    'qualified-headings': false
+    'unique-headings': false
+    'vendor-prefix': false
 
 gulp.task 'css', ->
   gulp.src $.src
@@ -19,6 +30,6 @@ gulp.task 'css', ->
 
 gulp.task 'css-lint', ->
   gulp.src $.target
-  .pipe csslint()
+  .pipe csslint $.cssrules
   .pipe csslint.reporter()
   .pipe notify (file) -> "#{file.relative} (#{file.csslint.results.length} errors)" unless file.csslint.success
